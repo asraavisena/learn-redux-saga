@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-
+import { getPosts } from "./Posts.actions";
 const Posts = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState("");
@@ -8,7 +8,13 @@ const Posts = () => {
 
   return (
     <div>
-      <button onClick={() => {}}>Get Posts</button>
+      <button
+        onClick={() => {
+          dispatch(getPosts());
+        }}
+      >
+        Get Posts
+      </button>
 
       <input
         value={title}
